@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container" style="background-image: url({{bgUrl[1].tempFileURL}}),url({{bgUrl[0].tempFileURL}});background-size: 100% 100%">
+
+  <!--内容-->
+  <view class="content" style="height:300px">
+    <view class="ring inner"><view class="dot dot1"></view>12:00:00</view>
+    <view class="ring mid"><view class="dot dot2"></view></view>
+    <view class="ring outer"><view class="dot dot3"></view></view>
+  </view>
+  <!--引导-->
+  <view class="button">
+    <view class="pause" bindtap='pause'>暂停计时</view>
+    <view class="stop">停止</view>
+  </view>
+  <view class="mute">
+    <image class="mute-img" src="/images/mute.png"></image>
+  </view>
+</view>
+<!-- <view class="container star" style="background-image: url({{bgUrl[1].tempFileURL}});background-size: 100% 100%"></view> -->
+<!-- <image src="{{bgUrl[1].tempFileURL}}" class="star"></image>
+<image src="{{bgUrl[1].tempFileURL}}" class="star1"></image> -->

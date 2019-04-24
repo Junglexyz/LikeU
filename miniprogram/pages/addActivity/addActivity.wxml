@@ -1,0 +1,71 @@
+<!--pages/addActivity/addActivity.wxml-->
+<view class="container">
+  <view class="activity name">
+    <text>目标:</text>
+    <input bindinput="activity" class="input" placeholder="请输入目标名称" auto-focus />
+  </view>
+  <view class="activity quotition">
+    <text>激励:</text>
+    <input bindinput="motto" class="input" placeholder="输入一句鼓励你自己的话"/>
+  </view>
+  <view class="select" bindtap='openSelectIcon'>
+    <view class="select-name">选择图标</view>
+    <view class="select-icon">
+      <image class="icon-img" src="/images/icon/{{iconsIndex}}.png"></image>
+    </view>
+  </view>
+  <view class="levels">
+    <view class="goal level" bindtap='goal'>
+      目标
+      <view class="{{goal==true?'line':''}}"></view>
+    </view>
+    <view class="habit level" bindtap='habit'>
+      习惯
+      <view class="{{goal==false?'line':''}}"></view>
+    </view>
+  </view>
+  <view class="goal-content" wx:if="{{goal==true}}">
+    <view class="goal-content-hour">
+      <view class="hour">时长</view>
+      <input bindinput="hour" class="input input-length" placeholder="目标时长(h)"/>
+    </view>
+    <view class="section">
+      <view class="section-title">期限</view>
+      <picker
+        mode="date"
+        value="{{date}}"
+        start="2019-01-09"
+        end="2999-09-01"
+        bindchange="bindDateChange"
+        class="input"
+      >
+        <view class="picker" style="width:500rpx">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="goal-content-hour">
+      <view class="hour">每天</view>
+      <input bindinput="everyHour" class="input input-length" placeholder="每天用时(h)" disabled='true' value="{{everyHourValue}}"/>
+    </view>
+  </view>
+
+  <view class="habit" wx:if="{{goal==false}}">
+    <text>习惯是没有期限的</text>
+  </view>
+
+  <view class="btn" bindtap='submit'>
+    <view class="btn-content" bindtap='submit'>确定</view>
+  </view>
+</view>
+<!--图标-->
+<view class="icon" wx:if="{{selectIcon}}">
+  <view class="icon-box">
+    <view class='img-box' wx:for="{{icon}}" wx:key="key2" >
+      <image bindtap='selectIcon' data-iconIndex="{{index+1}}" src="/images/icon/{{index+1}}.png" class="icon-img {{index+1==iconsIndex?'selected':''}}" ></image>
+      <image class="selected-img" wx:if="{{index+1==iconsIndex}}" src="/images/icon/success.png"></image>
+    </view>
+  </view>
+  <image class="close-img" src="/images/icon/close.png" bindtap='closeSelectIcon'></image>
+</view>

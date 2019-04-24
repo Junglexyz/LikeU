@@ -1,0 +1,151 @@
+/**index.wxss**/
+.container {
+  padding: 10rpx;
+  background: #e7e7e7;
+  box-sizing: border-box
+} 
+.time{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx;
+  background: #fff;
+  border-radius: 15rpx;
+}
+.time-left{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.day{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 125rpx;
+  height: 125rpx;
+  background-color: rgba(40,192,251,0.4);
+  border-radius: 15rpx;
+}
+.day-top{
+  font-size: 30px;
+  color: #28c1fb
+}
+.day-bottom{
+  font-size: 11px;
+  color: #ccc
+}
+.date{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 20rpx;
+  color: #787878
+}
+.time-right{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+  font-size: 30px;
+}
+
+.activities{
+  display: flex;
+  flex-flow: column nowrap;
+}
+.activity{
+  margin-top:15rpx;
+  border-left: 20rpx solid #28c1fb;
+  border-right: 20rpx solid #28c1fb;
+  border-radius: 20rpx;
+  background: #fff;
+  padding: 10rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between
+}
+.activity-left{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center
+}
+.icon{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%
+}
+.activity-img{
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 50%;
+  padding: 25rpx;
+  background: #28c1fb
+}
+.descript{
+  padding: 15rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around
+}
+.activity-name{
+  padding: 5rpx;
+}
+.quotation{
+  padding: 5rpx;
+  font-size:28rpx;
+  color: #565656
+}
+.play-img{
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+  /* padding: 25rpx; */
+}
+
+/**提示用户下拉的动画*/
+.pull{
+	width:100px;
+	height:100px;
+  top:-100px;
+  position: absolute;
+	background:red;
+  left: 50%;
+  -ms-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0); 
+  opacity: 0.1;
+	/* animation:myfirst 5s 5;
+	-webkit-animation:myfirst 2s 5; Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+	/* 0%{background:red;top:-100px}
+	50% {background:yellow;top:0}
+  100% {background:red;top:-100px} */
+  from{background:red;top:-100px}
+	to {background:yellow;top:0}
+}
+.pulldown{
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:-220px;
+  width:100%;
+  height:220px;
+  box-sizing: border-box
+}
+.pulldown-bg{
+  width: 100%;
+  height: 200px
+}

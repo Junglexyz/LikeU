@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" animation="{{pulldown}}">
+  <!--当前日期-->
+  <view class="time">
+    <view class="time-left">
+      <view class="day">
+        <text class="day-top">{{time.day}}</text>
+        <!-- <text class="day-bottom">SUN</text> -->
+      </view>
+      <view class="date">
+        <view calss="date-top">{{time.week}}</view>
+        <view calss="date-bottom">{{time.year}}年{{time.month}}月</view>
+      </view>
+    </view>
+    <view class="time-right">{{time.hour}}:{{time.minute}}</view>
+  </view>
+
+  <!--活动项目-->
+  <view class="activities">
+    <view class="activity" wx:for="{{activities}}" wx:for-item="activity" wx:key="key" style="border-left: 20rpx solid {{activity.iconColor}};border-right: 20rpx solid {{activity.iconColor}};">
+      <view class="activity-left">
+        <view class="icon">
+          <image class="activity-img" src="/images/icon/{{activity.iconImg}}" style="background:{{activity.iconColor}}"></image>
+        </view>
+        <view class="descript">
+          <text class="activity-name">{{activity.name}}</text>
+          <text class="quotation">{{activity.motto}}</text>
+        </view>
+      </view>
+      <view class="activity-right">
+        <view class="icon">
+          <image class="play-img" src="/images/activity/play2.png" bindtap="audioPlay" data-id="{{index}}"></image>
+          <image class="play-img" src="/images/activity/dot1.png" bindtap='detailClick'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--提示用户下拉的动画-->
+  <view class="pull" animation="{{tipInfo}}"></view>
+
+
+
+</view>
+<view class="pulldown" animation="{{pulldown}}">
+  <image class="pulldown-img" src="/images/pull_bg.jpg"></image>
+  <navigator url="/pages/addActivity/addActivity">
+    <view>创建一个新任务</view>
+  </navigator>
+</view>
+<view style='height:100%;bottom:-650px;width:100%;position:fixed;overflow: auto;-ms-overflow-style: none;overflow: -moz-scrollbars-none' animation="{{details}}">
+  <view style="background:#fff;height:600px;width:100%;margin-top:230px;border-radius:20px">
+  详情
+  </view>
+</view>

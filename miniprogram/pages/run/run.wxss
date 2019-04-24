@@ -1,0 +1,67 @@
+/* pages/run/run.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: #28c1fb;
+}
+ring-group{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #f6f3eb;
+}
+.ring{
+  display: flex;
+  flex-flow: column nowrap;
+  /* justify-content: space-around; */
+  align-items: center;
+  position: fixed
+}
+.ring1{
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  animation: rotate 30s infinite linear
+}
+.ring2{
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: rotate 20s infinite linear
+}
+.ring3{
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+  animation: rotate 10s infinite linear
+}
+.dot{
+  top:-5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  /* transform-origin: 80px 80px; */
+  position: fixed;
+  /* animation: rotate 3s infinite linear */
+}
+@keyframes rotate{
+  100%{
+    transform: rotate(-360deg)
+  }
+}
+.time{
+  font-size: 66rpx;
+  color: #fff
+}

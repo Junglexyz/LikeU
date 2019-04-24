@@ -1,0 +1,19 @@
+<!--pages/run/run.wxml-->
+<view class="container">
+  <view class="ring-group">
+    <view class="time">12:26</view>
+    <view class="ring ring1" style="top:{{sysWH.height/2-80}}px;left:{{sysWH.width/2-80}}px">
+      <view class="dot"></view>
+    </view>
+    <view class="ring ring2" style="top:{{sysWH.height/2-100}}px;left:{{sysWH.width/2-100}}px">
+      <view class="dot"></view>
+    </view>
+    <view class="ring ring3" style="top:{{sysWH.height/2-130}}px;left:{{sysWH.width/2-130}}px">
+      <view class="dot"></view>
+    </view>
+  </view>
+  <view class="button">
+    <view class="paise">暂停计时</view>
+    <view class="paise">停止</view>
+  </view>
+</view>
